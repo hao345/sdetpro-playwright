@@ -13,6 +13,8 @@ export default defineConfig({
         }
     ],
     use: {
-        headless: false
+        headless: false,
+        baseURL: 'https://the-internet.herokuapp.com/',
+        actionTimeout: 5000
     }
 })
