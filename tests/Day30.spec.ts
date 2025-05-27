@@ -27,5 +27,4 @@ test.describe('Day 30 - Page Object Model - Approach 2', () => {
 })
 
 test.describe('Day 30 - Page Object Model - Approach 3', () => {
-
 })
