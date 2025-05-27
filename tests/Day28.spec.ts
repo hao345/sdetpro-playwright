@@ -61,16 +61,14 @@ test('Handle Mouse Hover', async ({ page }) => {
     }
 })
 
-test('Checking element states and handle dynamic control', async ({ page }) => {
+test('Checking element states and handle dynamic control checkbox', async ({ page }) => {
     await page.goto('/dynamic_controls');
 
     //Find all parent components
     const checkboxComponent = page.locator('#checkbox-example');
-    const inputComponent = page.locator('#input-example');
 
     //Interact with checkbox component's element
     const checkboxLoc = checkboxComponent.locator('#checkbox input')
-    let isCheckboxEnabled = await checkboxLoc.isEnabled();
     let isCheckboxChecked = await checkboxLoc.isChecked();
     if (!isCheckboxChecked) {
         await checkboxLoc.click();
@@ -80,8 +78,23 @@ test('Checking element states and handle dynamic control', async ({ page }) => {
     const removeBtnLoc = checkboxComponent.locator('button');
     await removeBtnLoc.click();
     await page.waitForSelector('#checkbox-example #checkbox input', { state: 'hidden' });
+})
+
+test('Checking element states and handle dynamic control input', async ({ page }) => {
+    await page.goto('/dynamic_controls');
+
+    //Find all parent components
+    const inputComponent = page.locator('#input-example');
 
     //Interact with input component's element
+    const inputLoc = inputComponent.locator('input')
+    const enableBtn = inputComponent.locator('button')
+    let isInputEnabled = await inputLoc.isEnabled();
+    if (!isInputEnabled) {
+        await enableBtn.click();
+    }
+    await inputLoc.fill('123');
+    await enableBtn.click();
 
-
+    await page.waitForTimeout(2000);
 })
