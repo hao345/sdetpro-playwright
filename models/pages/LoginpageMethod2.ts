@@ -1,5 +1,4 @@
 import { Locator, Page } from "@playwright/test";
-import { LoginCreds } from "../../types/DataType";
 
 export default class LoginPageMethod2 {
     //Scope to declare selectors
