@@ -1,7 +1,7 @@
 import { Page, test } from '@playwright/test'
 import { LoginCreds } from '../types/DataType'
-import LoginPageMethod1 from '../models/pages/LoginpageMethod1'
-import LoginPageMethod2 from '../models/pages/LoginpageMethod2'
+import LoginPageMethod1 from '../models/pages/traditional/LoginpageMethod1'
+import LoginPageMethod2 from '../models/pages/traditional/LoginpageMethod2'
 import HomePage from '../models/pages/HomePage'
 
 const loginCreds: LoginCreds = {
@@ -27,12 +27,13 @@ test.describe('Day 30 - Page Object Model - Approach 2', () => {
     })
 })
 
+//Component in page (Page contain Component, Component contain element inside)
 test.describe('Day 30 - Page Object Model - Approach 3', () => {
     test('Home Page Test', async ({ page }) => {
         await page.goto('/login');
         const homePage = new HomePage(page);
         const footerComponent = homePage.footerComponent()
-        const poweredByText = await footerComponent.powerByText(); 
+        const poweredByText = await footerComponent.powerByText();
         console.log('Powered by text:', poweredByText)
     })
 })

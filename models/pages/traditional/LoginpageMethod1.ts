@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import { LoginCreds } from "../../types/DataType";
+import { LoginCreds } from "../../../types/DataType";
 
 export default class LoginPageMethod1 {
     //Scope to declare selectors
