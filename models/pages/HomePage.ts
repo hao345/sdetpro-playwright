@@ -1,6 +1,7 @@
 import { Page } from "@playwright/test";
 import FooterComponent from "../components/global/FooterComponent";
 import ProductItemComponent from "../components/ProductItemComponent";
+import PageBodyComponent from "../components/global/PageBodyComponent";
 
 export default class HomePage {
     constructor(private page: Page) {
@@ -11,8 +12,7 @@ export default class HomePage {
         return new FooterComponent(this.page.locator(FooterComponent.LOCATOR))
     }
 
-    async productItemComponentList(): Promise<ProductItemComponent[]>{
-        const productItemCompList = await this.page.locator(ProductItemComponent.LOCATOR).all();
-        return productItemCompList.map(locator => new ProductItemComponent(locator));
+    pageBodyComponent(): PageBodyComponent {
+        return new PageBodyComponent(this.page.locator(PageBodyComponent.LOCATOR));
     }
 }

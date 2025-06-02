@@ -2,10 +2,11 @@ import { Page, test } from '@playwright/test'
 import HomePage from '../models/pages/HomePage'
 
 
-test('POM - List of Components', async ({ page }) => {
+test('POM - Component in parent Components', async ({ page }) => {
     await page.goto('/');
     const homePage = new HomePage(page);
-    const productItemCompList = await homePage.productItemComponentList()
+    const productItemComponent = homePage.pageBodyComponent();
+    const productItemCompList = await productItemComponent.productItemComponentList()
     for (const productItem of productItemCompList) {
         const productTitle = await productItem.getProductTitle();
         const productPrice = await productItem.getPriceTitle();
