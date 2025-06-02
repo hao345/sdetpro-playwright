@@ -10,6 +10,6 @@ test('POM - Component in parent Components', async ({ page }) => {
     for (const productItem of productItemCompList) {
         const productTitle = await productItem.getProductTitle();
         const productPrice = await productItem.getPriceTitle();
-        console.log(`Product Title: ${productTitle} and Product Price: ${productPrice}`);
+        console.log(`Product title: ${productTitle} and Product Price: ${productPrice}`);
     }
 });
