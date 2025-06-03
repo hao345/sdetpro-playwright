@@ -1,7 +1,7 @@
 import { Page } from "@playwright/test";
-import FooterComponent from "../components/global/FooterComponent";
+import FooterComponent from "../components/global/Footer/FooterComponent";
 import ProductItemComponent from "../components/ProductItemComponent";
-import PageBodyComponent from "../components/global/PageBodyComponent";
+import PageBodyComponent from "../components/PageBodyComponent";
 
 export default class HomePage {
     constructor(private page: Page) {
