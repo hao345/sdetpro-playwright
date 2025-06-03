@@ -8,5 +8,5 @@ export default class HomePage {
 
     footerComponent(): FooterComponent {
         return new FooterComponent(this.page.locator(FooterComponent.LOCATOR))
-        }
+    }
 }
