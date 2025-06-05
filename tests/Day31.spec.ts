@@ -13,3 +13,15 @@ test('POM - Component in parent Components', async ({ page }) => {
         console.log(`Product title: ${productTitle} and Product Price: ${productPrice}`);
     }
 });
+
+test('POM - Reusing Base Component', async ({ page }) => {
+    await page.goto('/');
+    const homePage = new HomePage(page);
+    const footerComponent = homePage.footerComponent();
+    const infomationColumnComp = footerComponent.infomationColumnComponent();
+    const custerServiceColumnComp = footerComponent.customerServiceColumnComponent();
+    const infomationColumnText = await infomationColumnComp.getTitleTest();
+    console.log(infomationColumnText);
+    const customServiceColumnText = await custerServiceColumnComp.getTitleTest();
+    console.log(customServiceColumnText);
+});

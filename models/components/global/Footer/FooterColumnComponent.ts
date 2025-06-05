@@ -1,20 +1,23 @@
 import { Locator } from "@playwright/test";
 import { link } from "fs";
 
+/* This component doesn't define a specific locator.
+It only keeps common selectors that can be reused.
+The actual locator will be added when extending or using this component. */
 export default class FooterColumnComponent {
-
+    protected component: Locator;
     private titleSelector = 'h3';
     private linkSelector = 'li a';
 
-    constructor(private component: Locator) {
+    constructor(component: Locator) {
         this.component = component;
     }
 
-    async getTitleTest(): Promise<string> {
+    public async getTitleTest(): Promise<string> {
         return await this.component.locator(this.titleSelector).innerText();
     }
 
-    async getLinkList(): Promise<string[]> {
+    public async getLinkList(): Promise<string[]> {
         const linkListTexts: string[] = []
         const linkList = await this.component.locator(this.linkSelector).all();
         //Method 1
