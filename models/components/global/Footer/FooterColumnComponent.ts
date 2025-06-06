@@ -1,5 +1,4 @@
 import { Locator } from "@playwright/test";
-import { link } from "fs";
 
 /* This component doesn't define a specific locator.
 It only keeps common selectors that can be reused.

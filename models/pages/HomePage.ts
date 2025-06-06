@@ -1,15 +1,10 @@
 import { Page } from "@playwright/test";
-import FooterComponent from "../components/global/Footer/FooterComponent";
-import ProductItemComponent from "../components/ProductItemComponent";
 import PageBodyComponent from "../components/PageBodyComponent";
+import BasePage from "./BasePage";
 
-export default class HomePage {
-    constructor(private page: Page) {
-        this.page = page
-    }
-
-    footerComponent(): FooterComponent {
-        return new FooterComponent(this.page.locator(FooterComponent.LOCATOR))
+export default class HomePage extends BasePage {
+    constructor(page: Page) {
+        super(page);
     }
 
     pageBodyComponent(): PageBodyComponent {
