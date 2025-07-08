@@ -3,6 +3,11 @@ import { Locator } from "@playwright/test";
 /* This component doesn't define a specific locator.
 It only keeps common selectors that can be reused.
 The actual locator will be added when extending or using this component. */
+
+// Base class that contains common logic for all footer columns
+// Includes reusable methods like: getLinkList(), getTitleText(), getLinkElements()
+// Easy to extend for more verifications (e.g., check for images, icons, etc.)
+
 export default class FooterColumnComponent {
     protected component: Locator;
     private titleSelector = 'h3';

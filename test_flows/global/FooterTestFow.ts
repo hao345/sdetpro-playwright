@@ -3,6 +3,8 @@ import FooterComponent from "../../models/components/global/Footer/FooterCompone
 import { Page } from "@playwright/test";
 import HomePage from "../../models/pages/HomePage";
 
+// Defines the step-by-step flow to verify different footer columns
+// Prepares test data and delegates assertions to shared logic methods
 export default class FooterTestFlow {
 
     constructor(private page: Page) {
@@ -10,7 +12,7 @@ export default class FooterTestFlow {
     }
 
     async verifyFooterComponent() {
-        const homePage = new HomePage(this.page)
+        const homePage = new HomePage(this.page);
         const footerComponent = homePage.footerComponent();
         await this.verifyInformationColumnComponent(footerComponent)
         await this.verifyCustomerServiceColumnComponent(footerComponent)

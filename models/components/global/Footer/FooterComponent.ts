@@ -3,6 +3,9 @@ import InformationColumnComponent from "./InformationColumnComponent";
 import CustomServiceColumnComponent from "./CustomServiceColumnComponent";
 import MyAccountColumnComponent from "./MyAccountColumnComponent";
 
+// Represents the entire <footer> section of the page
+// Provides methods to access each footer column component (Information, Customer Service, etc.)
+
 export default class FooterComponent {
     public static readonly LOCATOR = '.footer';
     constructor(private component: Locator) {
