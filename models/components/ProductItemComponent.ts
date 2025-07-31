@@ -1,5 +1,6 @@
 import { Locator } from "@playwright/test";
 
+// ProductItemComponent represents a single product item in the product list.
 export default class ProductItemComponent {
     public static readonly LOCATOR = '.product-item';
     private productTitleSelector = '.product-title';

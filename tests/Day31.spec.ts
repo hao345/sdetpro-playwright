@@ -1,9 +1,12 @@
 import { Page, test } from '@playwright/test'
 import HomePage from '../models/pages/HomePage'
 
+// Test: Extract all product titles and prices from the homepage using POM
 test('POM - Component in parent Components', async ({ page }) => {
     await page.goto('/');
+    // Create an instance of the HomePage object
     const homePage = new HomePage(page);
+    // Get all product items inside the page body
     const productItemComponent = homePage.pageBodyComponent();
     const productItemCompList = await productItemComponent.productItemComponentList()
     for (const productItem of productItemCompList) {

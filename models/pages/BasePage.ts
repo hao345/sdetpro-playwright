@@ -1,5 +1,6 @@
 import { Page } from "@playwright/test";
 import FooterComponent from "../components/global/Footer/FooterComponent";
+import HeaderComponent from "../components/global/HeaderComponent";
 
 // 🔰 BasePage.ts
 // This is the base class for all page objects (e.g., HomePage, ProductPage, etc.).
@@ -11,12 +12,16 @@ import FooterComponent from "../components/global/Footer/FooterComponent";
 // Example: HomePage extends BasePage will automatically inherit footerComponent()
 
 export default class BasePage {
-    public page: Page;
-    constructor(page: Page) {
+    constructor(protected page: Page) {
         this.page = page
     }
 
     footerComponent(): FooterComponent {
         return new FooterComponent(this.page.locator(FooterComponent.LOCATOR))
+    }
+
+    //If the header Component is shared across pages, it will be defined here
+    headerComponent(): HeaderComponent {
+        return new HeaderComponent(this.page);
     }
 }
