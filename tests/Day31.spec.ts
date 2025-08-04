@@ -8,7 +8,7 @@ test('POM - Component in parent Components', async ({ page }) => {
     const homePage = new HomePage(page);
     // Get all product items inside the page body
     const productItemComponent = homePage.pageBodyComponent();
-    const productItemCompList = await productItemComponent.productItemComponentList()
+    const productItemCompList = await productItemComponent.productItemComponentList();
     for (const productItem of productItemCompList) {
         const productTitle = await productItem.getProductTitle();
         const productPrice = await productItem.getPriceTitle();

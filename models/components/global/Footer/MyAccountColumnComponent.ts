@@ -6,9 +6,9 @@ import FooterColumnComponent from "./FooterColumnComponent";
 // Inherit shared logic from FooterColumnComponent
 
 export default class MyAccountColumnComponent extends FooterColumnComponent {
-    public static readonly LOCATOR = '.column.my-account'
+    public static readonly LOCATOR = '.column.my-account';
 
     constructor(component: Locator) {
-        super(component)
+        super(component);
     }
 }

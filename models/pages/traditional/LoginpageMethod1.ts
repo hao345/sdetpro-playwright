@@ -20,10 +20,10 @@ export default class LoginPageMethod1 {
     }
 
     public async inputUsername(username: string): Promise<void> {
-        await this.page.locator(this.usernameSelector).fill(username)
+        await this.page.locator(this.usernameSelector).fill(username);
     }
     public async inputPassword(password: string): Promise<void> {
-        await this.page.locator(this.passwordSelector).fill(password)
+        await this.page.locator(this.passwordSelector).fill(password);
     }
     public async clickLoginBtn(): Promise<void> {
         await this.page.locator(this.loginButtonSelector).click();

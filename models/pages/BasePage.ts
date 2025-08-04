@@ -13,11 +13,11 @@ import HeaderComponent from "../components/global/HeaderComponent";
 
 export default class BasePage {
     constructor(protected page: Page) {
-        this.page = page
+        this.page = page;
     }
 
     footerComponent(): FooterComponent {
-        return new FooterComponent(this.page.locator(FooterComponent.LOCATOR))
+        return new FooterComponent(this.page.locator(FooterComponent.LOCATOR));
     }
 
     //If the header Component is shared across pages, it will be defined here

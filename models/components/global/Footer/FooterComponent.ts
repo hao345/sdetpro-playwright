@@ -25,7 +25,7 @@ export default class FooterComponent {
     }
 
     public myAccountColumnComponent(): MyAccountColumnComponent{
-        return new MyAccountColumnComponent(this.component.locator(MyAccountColumnComponent.LOCATOR))
+        return new MyAccountColumnComponent(this.component.locator(MyAccountColumnComponent.LOCATOR));
     }
 
     public async powerByText(): Promise<string> {

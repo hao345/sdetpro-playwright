@@ -10,9 +10,9 @@ while leaving the shared logic and selectors untouched. */
 // Inherit shared logic from FooterColumnComponent
 
 export default class InformationColumnComponent extends FooterColumnComponent{
-    public static readonly LOCATOR = '.column.information'
+    public static readonly LOCATOR = '.column.information';
 
     constructor (component: Locator){
-        super(component)
+        super(component);
     }
 }

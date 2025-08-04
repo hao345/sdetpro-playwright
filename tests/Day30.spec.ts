@@ -32,8 +32,8 @@ test.describe('Day 30 - Page Object Model - Approach 3', () => {
     test('Home Page Test', async ({ page }) => {
         await page.goto('/login');
         const homePage = new HomePage(page);
-        const footerComponent = homePage.footerComponent()
+        const footerComponent = homePage.footerComponent();
         const poweredByText = await footerComponent.powerByText();
-        console.log('Powered by text:', poweredByText)
+        console.log('Powered by text:', poweredByText);
     })
 })

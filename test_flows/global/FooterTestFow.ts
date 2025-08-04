@@ -15,8 +15,8 @@ export default class FooterTestFlow {
     async verifyFooterComponent() {
         const homePage = new HomePage(this.page);
         const footerComponent = homePage.footerComponent();
-        await this.verifyInformationColumnComponent(footerComponent)
-        await this.verifyCustomerServiceColumnComponent(footerComponent)
+        await this.verifyInformationColumnComponent(footerComponent);
+        await this.verifyCustomerServiceColumnComponent(footerComponent);
         //await this.verifyMyAccountColumnComponent(footerComponent)
         //await this.verifyFollowUsColumnComponent(footerComponent)
     }

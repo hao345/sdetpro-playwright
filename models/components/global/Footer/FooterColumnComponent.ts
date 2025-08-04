@@ -22,7 +22,7 @@ export default class FooterColumnComponent {
     }
 
     public async getLinkList(): Promise<string[]> {
-        const linkListTexts: string[] = []
+        const linkListTexts: string[] = [];
         const linkList = await this.component.locator(this.linkSelector).all();
         //Method 1
         for (const link of linkList) {
