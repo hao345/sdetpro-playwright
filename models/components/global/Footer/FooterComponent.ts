@@ -2,6 +2,7 @@ import { Locator } from "@playwright/test";
 import InformationColumnComponent from "./InformationColumnComponent";
 import CustomServiceColumnComponent from "./CustomServiceColumnComponent";
 import MyAccountColumnComponent from "./MyAccountColumnComponent";
+import FollowUsColumnComponent from "./FollowUsColumnCoponent";
 
 // Represents the entire <footer> section of the page
 // Provides methods to access each footer column component (Information, Customer Service, etc.)
@@ -26,6 +27,10 @@ export default class FooterComponent {
 
     public myAccountColumnComponent(): MyAccountColumnComponent{
         return new MyAccountColumnComponent(this.component.locator(MyAccountColumnComponent.LOCATOR));
+    }
+
+    public followUsColumnComponent(): FollowUsColumnComponent{
+        return new FollowUsColumnComponent(this.component.locator(FollowUsColumnComponent.LOCATOR));
     }
 
     public async powerByText(): Promise<string> {
