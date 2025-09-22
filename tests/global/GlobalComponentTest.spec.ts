@@ -1,6 +1,7 @@
 import test from '@playwright/test';
 import FooterTestFlow from '../../test_flows/global/FooterTestFow';
-import HeaderTestFlow from '../../test_flows/global/HeaderTestFlow';
+import HeaderTestFlow from '../../test_flows/Global/HeaderTestFlow';
+
 
 //Data-Driven
 //Is a concept to reuse or loop over a suite of test data for a test logic
