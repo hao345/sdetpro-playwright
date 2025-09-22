@@ -1,6 +1,6 @@
 import FooterColumnComponent from "../../models/components/global/Footer/FooterColumnComponent"
 import FooterComponent from "../../models/components/global/Footer/FooterComponent";
-import { Page } from "@playwright/test";
+import { expect, Page } from "@playwright/test";
 import HomePage from "../../models/pages/HomePage";
 import { deepStrictEqual } from 'assert';
 
@@ -65,11 +65,18 @@ export default class FooterTestFlow {
     // If InformationColumnComponent does NOT extend FooterColumnComponent, we can either: Change the parameter type to InformationColumnComponent (less reusable)
     // Instead, we must write separate verification methods for each column,and use their specific types: InformationColumnComponent, CustomerServiceColumnComponent, etc.
     private async verifyFooterColumnComponent(footerColumnComponent: FooterColumnComponent, expectedTitle: string, expectedTexts: string[], expectedHrefs: string[]) {
+        //Logic to verify here
         const actualTitle: string = await footerColumnComponent.getTitleText();
         const actualTexts: string[] = await footerColumnComponent.getLinkListTexts();
         const actualHrefs: string[] = await footerColumnComponent.getLinkLists();
 
-        deepStrictEqual(actualTitle, expectedTitle,
+        //Method 1: ToStrictEqual
+        expect(actualTitle).toStrictEqual(expectedTitle);
+        expect(actualTexts).toStrictEqual(expectedTexts);
+        expect(actualHrefs).toStrictEqual(expectedHrefs);
+
+        //Method 2: DeepStrictEqual
+        /* deepStrictEqual(actualTitle, expectedTitle,
             `Actual title and expected title is not the same
             Actual: ${actualTitle}
             Expected: ${expectedTitle}`);
@@ -82,6 +89,6 @@ export default class FooterTestFlow {
         deepStrictEqual(actualHrefs, expectedHrefs,
             `Actual hrefs and expected hrefs is not the same
             Actual: ${actualHrefs}
-            Expected: ${expectedHrefs}`);
+            Expected: ${expectedHrefs}`); */
     }
 }

@@ -38,9 +38,10 @@ export default class FooterColumnComponent {
 
     //Get the list of the link
     public async getLinkLists(): Promise<string[]> {
-        const hrefList :string[] = [];
+        const hrefList: string[] = [];
         const linkList = await this.component.locator(this.linkSelector).all()
-        for(const link of linkList){
+        for (const link of linkList) {
+            //Get the attribute of the URL
             const href = await link.getAttribute('href');
             hrefList.push(href || '');
         }
